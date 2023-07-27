@@ -37,7 +37,7 @@ def transform_image(image_bytes):
   return my_transforms(image).unsqueeze(0)
 
 # 해당 메소드를 통해 이미지를 byte 단위로 읽은 후, 일련의 변환을 적용하여 Tensor를 반환
-with open("_static\img\sample_file.jpeg", 'rb') as f:
+with open("static\img\sample_file.jpeg", 'rb') as f:
   image_bytes = f.read()
   tensor = transform_image(image_bytes=image_bytes)
   print(tensor)
@@ -55,7 +55,7 @@ def get_prediction(image_bytes):
   return y_hat
 
 # 사람이 읽을 수 있는 분류명이 있어야하기 때문에, 이를 위해 이름과 분류 ID를 매핑 하기 위해 해당 파일 불러오기
-imagenet_class_index = json.load(open("_static\imagenet_class_index.json"))
+imagenet_class_index = json.load(open("static\imagenet_class_index.json"))
 
 # 위 json 파일 데이터를 인식 후 반환하기 위해 메소드 재정의
 def get_prediction(image_bytes):
@@ -66,6 +66,6 @@ def get_prediction(image_bytes):
   return imagenet_class_index[predict_idx]
 
 # 이미지를 보고 추론을 진행
-with open("_static\img\sample_file.jpg", 'rb') as f:
+with open("static\img\sample_file.jpg", 'rb') as f:
   image_bytes = f.read()
   print(get_prediction(image_bytes=image_bytes))
