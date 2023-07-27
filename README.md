@@ -1,2 +1,14 @@
-# PyTorch_Flask_API
-PyTorch와 Flask를 사용한 모델 API 통합 프로젝트입니다.
+# PyTorch Flask API
+
+## Requirements
+
+Install them from `requirements.txt`:
+
+    pip install -r requirements.txt
+
+
+## Local Deployment
+
+Run the server:
+
+    python app.py
