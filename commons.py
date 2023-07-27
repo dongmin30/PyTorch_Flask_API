@@ -9,7 +9,7 @@ import torchvision.transforms as transforms
 def get_model():
     # torchvision에서 제공하는 densentnet121 모델 가져오기
     model = models.densenet121(pretrained=True)
-    # 추론에만 사용하기 때문에 eval 모드로 변경
+    # 추론에만 사용하기 때문에 eval 모드로 변경 - 평가모드
     model.eval()
     return model
 
