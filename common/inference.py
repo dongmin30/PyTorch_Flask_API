@@ -1,6 +1,6 @@
 import json
 
-from commons import get_model, transform_image
+from common.commons import get_model, transform_image
 
 model = get_model()
 imagenet_class_index = json.load(open('imagenet_class_index.json'))

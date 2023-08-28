@@ -2,8 +2,8 @@ import os
 
 from flask import Flask, render_template, request, redirect, jsonify
 
-from inference import get_prediction
-from commons import format_class_name
+from common.inference import get_prediction
+from common.commons import format_class_name
 
 app = Flask(__name__)
 
@@ -23,8 +23,7 @@ def upload_file():
         # 추론 결과 값을 사람이 보기 편하도록 포매팅
         class_name = format_class_name(class_name)
         # 화면 전환
-        return render_template('result.html', class_id=class_id,
-                               class_name=class_name)
+        return render_template('result.html', class_id=class_id, class_name=class_name)
     return render_template('index.html')
 
 # JSON 값으로 반환 적용 시 사용하는 API
